@@ -1,17 +1,12 @@
 /*
-*   Read data from a JSON file
+*   Read data from a JSON file into a ds_map
+*   and return it to a calling function
 */
 
 var JSONContents = "";
 var decodeMap;
 var list;
 var size;
-var map;
-var curr;
-
-// Ensure search key is a string
-//if(!is_string(searchKey))
-//    string(searchKey);
 
 // Check for valid file
 if(file_exists(JSONFile))
@@ -30,26 +25,8 @@ if(file_exists(JSONFile))
     // Enter contents of string into a ds_map, get list size
     decodeMap = json_decode(JSONContents);
     list = ds_map_find_value(decodeMap, "default");
-//    show_debug_message(list)
     size = ds_list_size(list);
-    
-//    for(i = 0; i < size; i++)
-//    {
-        // Create a new ds_map, use values in list
-//        map = ds_list_find_value(list, i);
-//        curr = ds_map_find_first(map);
-        /* Enter data into an array, 
-        while(is_string(curr))
-        {
-            // Search for specified values by key
-            entry = ds_map_find_value(map, searchKey)
-            if(!is_undefined(entry))
-                JSONData[i] = entry;
-                
-            curr = ds_map_find_next(map, curr);
-        }*/
-//        ds_map_destroy(map);
-//    }
+
     return(decodeMap);
     ds_list_destroy(list);
     ds_map_destroy(decodeMap);
