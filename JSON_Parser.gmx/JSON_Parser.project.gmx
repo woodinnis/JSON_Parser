@@ -32,6 +32,8 @@
     <script>scripts\JSON_Read.gml</script>
     <script>scripts\JSON_Search.gml</script>
     <script>scripts\JSON_Write.gml</script>
+    <script>scripts\script5.gml</script>
+    <script>scripts\JSON_Size.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objJSONParse</object>

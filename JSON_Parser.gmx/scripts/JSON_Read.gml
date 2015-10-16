@@ -4,9 +4,9 @@
 */
 
 var JSONContents = "";
-var decodeMap;
-var list;
-var size;
+var decodeMap = ds_map_create();
+var list = ds_list_create();
+var size = ds_list_create();
 
 // Check for valid file
 if(file_exists(JSONFile))

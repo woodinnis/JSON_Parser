@@ -10,11 +10,15 @@ var tempStr = "";   // Container for JSON file contents to which new data will b
 str = "";           // Container for new JSON data
 
 // Create a ds_map to hold the data
-JSONMap = ds_map_create();
+JSONMap = JSON_Read();
+
+list = ds_map_find_value(JSONMap, "default");
+size = ds_list_size(list);
 
 // Enter data into ds_map
-for(i = 0; i < countEntry; i++)
+for(i = size; i < countEntry + size; i++)
 {
+    ds_list_add(list);   
     for(j = 0; j < countValues; j++)
     {
         ds_map_add(JSONMap, key[j], value[j])
@@ -23,6 +27,15 @@ for(i = 0; i < countEntry; i++)
 
 // Convert data to JSON
 str = json_encode(JSONMap);
+
+// Append to appropriate data file
+data = file_text_open_write(JSONFile);
+file_text_write_string(data, str);
+file_text_close(data);
+
+/*
+
+ds_map_destroy(JSONMap);
 
 // Read current file contents into a temporary container
 data = file_text_open_read(JSONFile)
@@ -43,12 +56,3 @@ if(string_pos("]", tempStr) != 0)
 }
 
 str = tempStr + str;
-
-/* Append to appropriate data file
-data = file_text_open_write(JSONFile);
-file_text_write_string(data, str);
-file_text_write_string(data, "]");
-file_text_close(data);
-
-
-ds_map_destroy(JSONMap);

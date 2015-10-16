@@ -50,6 +50,48 @@
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>script5</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -67,16 +109,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(is_array(JSONData))
+            <string>if(keyboard_check_pressed(ord("D")))
 {
-    JSONLong = array_length_1d(JSONData);
-    for(i = 0; i &lt; JSONLong; i++)
+    JSONMap = ds_map_create();
+    JSONMap = JSON_Read();
+    n = JSON_Size(JSONMap);
+    
+    for(i = 0; i &lt; n; i++)
     {
-        JSON_Search("EVIDENCE");
-        draw_text(10,10*i,JSONData[i]);
+        source = JSON_Search(JSONMap,"CRIME");
     }
+//    source = ds_map_find_value(JSONMap, "EVIDENCE")
+    draw_text(10,10, source);
 }
-
 //draw_text(10,100,str);
 </string>
           </argument>

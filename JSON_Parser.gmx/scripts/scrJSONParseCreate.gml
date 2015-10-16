@@ -7,8 +7,8 @@ globalvar JSONFile;
 JSONFile = working_directory + "\" + argument0;
 
 // Create an array to hold the JSON data
-globalvar JSONData;
-JSONData = 0;
+//globalvar JSONData;
+//JSONData = 0;
 
 
 keys[0] = "Waffle"
