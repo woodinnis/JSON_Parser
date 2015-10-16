@@ -19,5 +19,3 @@ values[0] = "Yes"
 values[1] = "Metal"
 values[2] = "cinnamon"
 values[3] = 99
-
-JSON_Write(2,4,keys,values);

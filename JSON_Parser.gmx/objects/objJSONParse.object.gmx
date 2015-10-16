@@ -65,11 +65,11 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>JSON_Read</script>
+            <script>script4</script>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>"EVIDENCE"</string>
+            <string></string>
           </argument>
           <argument>
             <kind>0</kind>
@@ -112,11 +112,12 @@
     JSONLong = array_length_1d(JSONData);
     for(i = 0; i &lt; JSONLong; i++)
     {
+        JSON_Search("EVIDENCE");
         draw_text(10,10*i,JSONData[i]);
     }
 }
 
-draw_text(10,100,str);
+//draw_text(10,100,str);
 </string>
           </argument>
         </arguments>

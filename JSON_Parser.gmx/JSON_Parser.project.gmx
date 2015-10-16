@@ -30,7 +30,9 @@
   <scripts name="scripts">
     <script>scripts\scrJSONParseCreate.gml</script>
     <script>scripts\JSON_Read.gml</script>
+    <script>scripts\JSON_Search.gml</script>
     <script>scripts\JSON_Write.gml</script>
+    <script>scripts\script4.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objJSONParse</object>
