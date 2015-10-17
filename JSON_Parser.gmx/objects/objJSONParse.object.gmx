@@ -109,7 +109,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(keyboard_check_pressed(ord("D")))
+            <string>source = "";
+//if(keyboard_check_pressed(ord("D")))
 {
     JSONMap = ds_map_create();
     JSONMap = JSON_Read();
@@ -117,7 +118,7 @@
     
     for(i = 0; i &lt; n; i++)
     {
-        source = JSON_Search(JSONMap,"CRIME");
+        source = JSON_Search(JSONMap,"nipples");
     }
 //    source = ds_map_find_value(JSONMap, "EVIDENCE")
     draw_text(10,10, source);
